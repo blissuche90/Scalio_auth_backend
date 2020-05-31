@@ -25,12 +25,6 @@ export class UserController {
         return res.status(HttpStatus.OK).json(users);
     }
     
-    @Get('usersSmallerDto')
-    async getAllUserSmallerDto(@Res() res) {
-        const users = await this.userService.getAllUserSmallerDto();
-        return res.status(HttpStatus.OK).json(users);
-    }
-
     // Fetch a particular user using ID
     @Get(':userID')
     async getUser(@Res() res, @Param('userID') userID) {

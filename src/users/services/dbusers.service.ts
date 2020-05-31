@@ -14,14 +14,6 @@ export class DbUserService {
         return users;
     }
 
-    async getAllUserSmallerDto(): Promise<userGetterDto[]> {
-        const users = await this.userModel.find().exec();
-        let usersBodyDto : userGetterDto[] = []
-        users.forEach(user => {
-            usersBodyDto.push(new userGetterDto(user._id,user.login,user.created_at))
-        });
-        return usersBodyDto;
-    }
     // Get a single user
     async getUser(userID): Promise<User> {
         const user = await this.userModel.findById(userID).exec();

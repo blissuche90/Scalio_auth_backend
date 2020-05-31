@@ -1,5 +1,4 @@
 import { Module } from '@nestjs/common';
-import { AdminService } from './services/admin.service';
 import { DbUserService } from './services/dbusers.service';
 import { MongooseModule } from '@nestjs/mongoose';
 import { UserSchema } from './models/user.schema';
@@ -10,11 +9,10 @@ import { UserSchema } from './models/user.schema';
     
   ],
   providers: [
-    DbUserService, 
-    AdminService
+    DbUserService
   ],
   controllers: [],
-  exports: [AdminService,DbUserService],
+  exports: [DbUserService],
 })
 export class UsersModule {
   
