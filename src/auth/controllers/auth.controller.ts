@@ -20,7 +20,7 @@ export class authController {
     return this.authService.login(user);
   }
 
-  @Post('register')
+  @Post('signup')
   async create(@Body() user :CreateUserDto) {
      return this.authService.create(user);
   }
@@ -34,7 +34,6 @@ export class authController {
 
   @Get('/gethello')
   @UseGuards(MyAuthGuard, RolesGuard)
-  @Roles('admin')
   async getHelloAdmin(@Request() req) : Promise<string>  {
      return this.authService.getHelloAdmin();
   }
