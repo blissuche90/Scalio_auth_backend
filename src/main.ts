@@ -12,7 +12,6 @@ async function bootstrap() {
     res.header('Access-Control-Allow-Headers', 'Content-Type, Accept');
     next();
   });
-  app.use('/avatars', express.static(join(__dirname, '..', 'avatars')));
   await app.listen(3000);
 }
 bootstrap();
